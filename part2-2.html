@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="part2.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="center"> <h1>Homework 3 - Part 2</h1>
+        <form action=""  id="myform" class="formLeft">
+            <label for="seller">Seller's Name:</label>
+            <input type="text" placeholder="Enter Name" id="seller"name="seller"  >
+            <p>For each item type the quantity sold by the seller</p>
+            <label for="item">Item 1:</label>
+            <input type="number" placeholder="Enter Number" id="item" name="item1" >
+            <label for="final">Item 2:</label>
+            <input type="number" placeholder="Enter Number" id="final" name="item2"  >
+            <label for="participation">Item 3:</label>
+            <input type="number" placeholder="Enter Number" id="participation" name="item3" >
+            <label for="participation">Item 4:</label>
+            <input type="number" placeholder="Enter Number" id="participation" name="item4" ><br>
+            <input type="button" onclick="calculateComission()" value="Submit"><br>
+
+            <input type="reset" value="Clear Form"><br>
+        </form><br>
+        <div id="result"></div><br>
+        <table id="myTable" style="width:320px">
+            <th>Item#</th><th>Price</th><th>Qty Sold</th><th>Total $</th>
+            <tr><td>1</td><td>$20.99</td><td></td><td></td></tr>
+            <tr><td>2</td><td>$12.75</td><td></td><td></td></tr>
+            <tr><td>3</td><td>$9.95</td><td></td><td></td></tr>
+            <tr><td>4</td><td>$35.89</td><td></td><td></td></tr><br>
+            <tr><td colspan="3">Total Amount Sold</td><td></td></tr>
+            <tr><td colspan="3">Total Weekly Earnings</td><td></td></tr>
+        </table>
+
+        <button class="button"><a href="index.html">Home Page</a></button>
+    </div>
+</body>
+</html>
