@@ -37,31 +37,39 @@ a{
 li a{
 text-decoration: none;
     text-transform: uppercase;
-    color:crimson;
+    color:rgb(0, 0, 0);
 }
 li a:hover{
   color:#fff;
 
     }
 .button{
+    margin-top: 10px;
+    color: black;
     border-radius: 20px;
-    border: 1px solid crimson;
+    border: 1px solid rgb(53, 37, 40);
     padding: 5px;
 }
+
 .button:hover{
     border-radius: 20px;
     border: 1px solid rgb(255, 255, 255);
-    background-color: crimson;
+    background-color: rgb(182, 178, 179);
     padding: 5px;
     color: #fff;
+
 }
 .container{
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
+    border: #191414 solid 2px ;
+max-width: 300px;
+margin: 0 auto;
 }
 .table{
     display: flex;
@@ -72,7 +80,29 @@ flex-direction: column;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
+
 }
+.tableTwo{
+    display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
+}
+table{
+    border: 1px solid black;
+}
+table th{
+    border: 1px solid black;
+}
+table  td{
+    border: 1px solid black;
+}
+
 
 .title{
   color: rgb(0, 0, 0);
@@ -80,3 +110,54 @@ flex-direction: column;
   font-family: "Roboto", sans-serif;
     font-weight: 300;
 }
+.center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.center form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.center .formLeft{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.red-input:focus {
+    background: yellow;
+    color: red;
+  }
+  #box{
+    border: #191414 solid 10px ;
+    margin: 0 auto;
+    padding: .5em 0 .25em;
+  }
+
+  .box1{
+    width: 100px;
+    height: 100px;
+    float: left;
+        background-color: rgb(255, 38, 0);
+  }
+  .box2{
+    width: 100px;
+    height: 100px;
+
+
+        background-color: aqua;
+      }
+      .buttonPlay{
+        display: none;
+      }
+      .message{
+        font-size: 24px;
+      }
+      .result{
+        font-size: 24px;
+      }
