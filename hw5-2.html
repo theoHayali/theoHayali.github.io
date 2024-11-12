@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hw4.css">
+    <title>Document</title>
+    <script>
+        function goToNewPage(myForm) {
+            var mydest = myForm.destList.options[myForm.destList.selectedIndex].value;
+            window.open(mydest);
+            }
+    </script>
+</head>
+<body>
+    <div class="title">
+        <h1> Home Work 5 </h1>
+        <h3> Part 2 </h3>
+    </div>
+    <br><br>
+        <div class="table">
+            <h3>Choose your Movie Website(using the onClick event handler</h3>
+    <form>
+        <select name="destList">
+        <option value="http://www.rottentomatoes.com/">Rotten Tomatoes</option>
+        <option value="http://www.cinemark.com/">Cinemark</option>
+        <option value="http://www.fandago.com/">Fandago</option>
+        </select>
+
+        <input type="button" value="Go" onclick="goToNewPage(this.form);">
+        </form></div><br>
+        <div class="table">
+            <h3>Choose your Search Engine(using the onChange event handler</h3>
+        <form>
+            <select name="destList" onchange="goToNewPage(this.form);">
+            <option value="http://www.yahoo.com/">Yahoo</option>
+            <option value="http://www.google.com/">Google</option>
+            <option value="https://www.mozilla.org/en-US/firefox/new/">Fire Fox</option>
+            </select>
+
+
+            </form></div><br><br>
+
+        <div class="table">
+
+            <a class="button" href="hw5.html">HOME WORK 5</a>
+            <a class="button" href="index.html">HOME PAGE</a>
+        </div>
+</body>
+</html>
