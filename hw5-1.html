@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hw4.css">
+    <title>Document</title>
+    <style>
+        .title{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <script>
+        function validate(myForm){
+            let message = ""
+            let browserError = false;
+            let nameError = false;
+            let ageError = false;
+            let nameResult = document.querySelector('#name').value;
+            if(Number.isInteger(nameResult) || nameResult == ""){
+                nameError = true;
+            }
+            let result = document.querySelector('.result')
+            result.innerHTML = ''
+            let a  = document.getElementsByTagName("input")[1].value;
+          //  let r  = document.querySelector("input[name=age]:checked")
+            var r = document.querySelector('input[name = "age"]:checked');
+
+            if(r == null){  //Test if something was checked
+                ageError = true;
+                }
+
+
+      //     var select = document.querySelectorAll('destList');
+
+      //  var mydest = myForm.destList.options[myForm.destList.selectedIndex].value;
+
+
+    /*        var age_radio = document.getElementsByName('age');
+           var ischecked_method = false;
+               for ( var i = 0; i < age_radio.length; i++) {
+                    if(age_radio[i].checked) {
+                         ischecked_method = true;
+break;
+    }
+}*/
+           // const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+           var array = []
+           var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+
+           for (var i = 0; i < checkboxes.length; i++) {
+             array.push(checkboxes[i].value)
+
+             browserError = false
+           }
+
+            if(ageError == true || nameError == true || checkboxes.length == 0){
+              message = "Error. Invalid data";
+        }else{
+            message = "Thanks, your data was submitted!"
+        }
+        result.innerHTML = message}
+    </script>
+</head>
+<body>
+    <div class="title">
+    <h1> Home Work 5 </h1>
+    <h3> Part 1 </h3>
+</div>
+<br><br>
+    <div class="container">
+
+
+    <form action="" name="myform">
+        <input type="text" name="" id="name">
+        <p>Please select your age:</p>
+        <input type="radio" id="age1" name="age" value="under 21">
+        <label for="age1">younger than 21</label><br>
+        <input type="radio" id="age2" name="age" value="60">
+        <label for="age2">21 - 50</label><br>
+        <input type="radio" id="age3" name="age" value="100">
+        <label for="age3">Older than 50</label><br><br>
+        <br><br>
+        <p>Please select the browser you use:</p>
+        <input type="checkbox" id="browsers" name="browser" value="Safari">
+        <label for="age1">Safari</label><br>
+        <input type="checkbox" id="Firefox" name="browser" value="Firefox">
+        <label for="age2">Firefox</label><br>
+        <input type="checkbox" id="Edge" name="browser" value="Edge">
+        <label for="age3">Edge</label><br>
+        <input type="checkbox" id="Chrome" name="browser" value="Chrome">
+        <label for="age3">Chrome</label><br>
+
+        <p>Please select the browser you use:</p>
+        <select name="destList">
+            <option value="Action">Action</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Documentary">Documentary</option>
+            <option value="Science Fiction">Science Fiction</option>
+</select><br><br>
+<input type="button" value="Go" onclick="validate(this.form);">&nbsp;&nbsp;&nbsp;<input type="reset" value="Clear">
+
+        </div><br><br>
+    </form></div><br><br>
+    <div class="result"></div><br><br>
+    <div class="table">
+    <a class="button" href="hw5.html">HOME WORK 5</a>
+    <a class="button" href="index.html">HOME PAGE</a>
+</div>
+</body>
+</html>
