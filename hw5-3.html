@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hw4.css">
+    <title>Document</title>
+    <style>
+        .title{
+            text-align: center;
+        }
+        .resultDisplay{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .main {
+           max-width: 200px;
+           margin: 0 auto;
+
+        }
+    </style>
+    <script>
+
+        function lookUp(){
+            let html = ""
+            let states = [];
+            let userInput = document.querySelector('#state').value
+            let result = document.getElementById('result')
+
+            if(userInput.trim().length === 0){
+                html += "Sorry, we do not have information about this state" + '<br>'
+            } else if(userInput.trim().length > 2){
+                let userInputCap =  userInput[0].toUpperCase() + userInput.slice(1)
+                let states = census.filter(st => (userInputCap == st.stateName));
+
+
+                html += "Thanks for your inquiry, here is the information you requested:" + '<br>'
+                html +=  "State abbr = " + states[0].stateAbbr + '<br>'
+                html +=  "State Name = " + states[0].stateName + '<br>'
+                html +=  "Capital = " + states[0].capital + '<br>'
+                html +=  "Population = " + states[0].population + '<br>'
+            } else{
+                let userInputUpper = userInput.toUpperCase()
+                let states = census.filter(st => (userInputUpper == st.stateAbbr));
+
+              html += "Thanks for your inquiry, here is the information you requested:" + '<br>'
+              html +=  "State abbr = " + states[0].stateAbbr + '<br>'
+              html +=  "State Name = " + states[0].stateName + '<br>'
+              html +=  "Capital = " + states[0].capital + '<br>'
+              html +=  "Population = " + states[0].population + '<br>'
+            }
+              result.innerHTML = html
+        }
+
+
+        const census = [
+            {
+               stateAbbr:'AL',
+               stateName:'Alabama',
+               capital:'Montgomery',
+               population:4903185
+            },
+            {
+                stateAbbr:'AK',
+                stateName:'Alaska',
+                capital:'Juneau',
+                population:731545
+             },
+             {
+                 stateAbbr:'AZ',
+                 stateName:'Arizona',
+                 capital:'Phoenix',
+                 population:7278717
+              },
+              {
+                stateAbbr:'AR',
+                stateName:'Arkansas',
+                capital:'Little Rock',
+                population:3017825
+             },
+              {
+                stateAbbr:'CA',
+                stateName:'California',
+                capital:'Sacramento',
+                population:5758736
+             },
+              {
+                stateAbbr:'CO',
+                stateName:'Colorado',
+                capital:'Denver',
+                population:5758736
+             }
+
+            ]
+
+    </script>
+</head>
+<body>
+    <div class="title"><h2>State Census Search</h2></div><br>
+<div class="main">
+        &nbsp; &nbsp; &nbsp; &nbsp;<form action="">
+            &nbsp; &nbsp; &nbsp; <input type="text" id="state" width="300px" placeholder="Enter State or Abbreviation"><br><br><br>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="reset" value="reset">
+            <button onclick="lookUp();return false">submit</button>
+
+        </form><br><br><br>
+    </div>
+
+    <div id="result" class="resultDisplay"></div>
+    <br><br>
+        <div class="table">
+            <a class="button" href="hw5.html">HOME WORK 5</a>
+            <a class="button" href="index.html">HOME PAGE</a>
+        </div>
+</body>
+</html>
