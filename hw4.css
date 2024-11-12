@@ -42,3 +42,7 @@ tr:nth-child(odd) {
 
 text-align: center;
 }
+.result{
+    text-align: center;
+    font-size: 1.5rem;
+}
