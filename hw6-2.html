@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 6 - Objects - Search Content</title>
+    <script>
+      var myWindow;
+        function search(){
+            let result = document.querySelector('.result')
+            let content = document.querySelector('#content-area').value
+            let contentLowerCase = content.toLowerCase()
+            let charInput = document.querySelector('#search-character').value
+            let charInputLowerCase = charInput.toLowerCase()
+            let counter = contentLowerCase.split(charInputLowerCase).length - 1;
+          if(counter > 0 && charInputLowerCase != null){
+            result.innerHTML = "The character " + charInputLowerCase + " was found " + counter + " times"
+          }else{
+                myWindow = window.open("", "", "width=300,height=100");
+                myWindow.document.write("<p>Search character '" + charInputLowerCase + "' was not found in the content you typed</p><br>");
+                myWindow.document.write('<input type="button"onclick="window.close()" value="close">');
+
+
+          }
+
+        }
+    </script>
+    <link rel="stylesheet" href="hw4.css">
+    <div class="title">
+    <title>Home 6 Part 2</title>
+</head>
+<body>
+<h1>Part 2</h1>
+
+<label for="content-area"><h3>Enter content to be search. </h3></label>
+<textarea id="content-area" name="content-area"  maxlength="50" ></textarea><br><br><br>
+<label for="content-area"><h3>Enter search character. </h3></label>
+<input type="text" name="search-character" id="search-character" >
+<input type="button" value="search" onclick="search()">
+<br><br><br>
+<div class="result"></div>
+<br><br><br>
+<a class="button" href="hw6.html">HOME WORK 6</a>
+<a class="button" href="index.html">HOME PAGE</a>
+</div>
+
+</body>
+</html>

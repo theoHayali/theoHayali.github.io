@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hw4.css">
+    <title>Homework 6 - Objects - Process Number</title>
+    <script>
+
+        function display(){
+            alert("disply" )
+             let result = document.querySelector('.result')
+             result +=  "Rounded to the nearest integer = "
+                    result.innerHTML = result
+
+        }
+        function processNumber(){
+            let result = document.querySelector('.result')
+            let num = document.querySelector('#userInput').value
+            let tokens =[0]
+            if (num === null) {
+                result.innerHTML = "Error! Null value entered, please try again"
+               } else if (num.trim() === '') {
+                result.innerHTML = "Error! No value entered, please try again"
+                } else if (isFinite(num) && (num % 1 !== 0)) {
+                  tokens = num.split(".");
+                        if(tokens[1].length === 4){
+                           let resulted = ''
+                    resulted +=  "You typed number " + parseFloat(num) + "<br>"
+                    resulted +=  "Rounded to the nearest integer = " + Math.round(parseFloat(num)) + "<br>"
+                    resulted +=  "Square root rounded to integer = " + Math.round(Math.sqrt((num)))+ "<br>"
+                    resulted +=  "Rounded to the nearest 10th position = " + parseFloat(num).toFixed(1)+ "<br>"
+                    resulted +=  "Rounded to the nearest 100th position = " + parseFloat(num).toFixed(2)+ "<br>"
+                    resulted +=  "Rounded to the nearest 1000th position = " + parseFloat(num).toFixed(3)+ "<br>"
+
+
+
+                    result.innerHTML = resulted
+
+                        }else{
+                            result.innerHTML = "You need to type a number with at least 4 decimals, please try again"
+
+                        }
+                }else{
+
+                    result.innerHTML = "You need to type a number with at least 4 decimals, please try again"
+
+                }
+            }
+
+    </script>
+    <title>Home 6 Part 3</title>
+</head>
+<body>
+
+<div class="table">
+    <h1>part 1</h1>
+    <h3>Enter a number with 4 decimals. </h3>
+    <form action="">
+        <label for="userInput"></label>
+        <input type="number"   name="userInput" id="userInput">
+        <input type="button" value="submit" onclick="processNumber()">
+    </form><br><br>
+</div>
+<div class="result"></div><br><br><br>
+<div class="table">
+<a class="button" href="hw6.html">HOME WORK 6</a>
+<a class="button" href="index.html">HOME PAGE</a>
+</div>
+</body>
+</html>

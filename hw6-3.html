@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hw4.css">
+    <title>Homework 6 - Objects - Regular Expressions</title>
+    <script>
+        function validatePhoneNumber() {
+            const phoneNumber = document.forms["myForm"].elements["input"].value;
+
+        const result = document.querySelector('.result')
+        const pattern = new RegExp("[\(][0-9]{3}[\)][0-9]{3}-[0-9]{4}")
+
+     if (pattern.test(phoneNumber)) {
+
+          result.innerHTML = "Phone number is valid"
+     } else {
+
+         result.innerHTML = "Phone number is not valid";
+     }
+       }
+  </script>
+</head>
+<body>
+    <div class="title">
+    <h1>part 3</h1>
+    <h3>Enter Phone Number - (999)999-999  - No Spaces </h3>
+<div class="table">
+    <form name = "myForm">
+        <table>
+           <tr>
+              <td><label for="input">Enter a Phone number<br>
+                 [in the form (999)999-9999 No Spaces]</label>
+              </td>
+              <td>
+                 <input name="input" type="text" id="input" size="20" autofocus>
+              </td>
+           </tr>
+           <tr>
+              <td colspan="2">
+                 <input type="button" value="Submit" onclick="validatePhoneNumber()">
+              </td>
+           </tr>
+           <tr>
+              <td colspan="2" >
+           </tr>
+           <tr>
+            <td colspan="2">
+            </td>
+         </tr>
+
+
+
+        </table><br><br><br>
+        <input type="reset" value="Reset" onClick="window.location.reload();">
+     </form><br><br><br>
+   <!--  <form action="" name="myForm">
+        <input type="text" id="phoneNumber">
+        <input type="button" value="submit" onclick="validatePhoneNumber()">
+    </form> -->
+</div>
+<div class="result"></div><br><br><br>
+<a class="button" href="hw6.html">HOME WORK 6</a>
+<a class="button" href="index.html">HOME PAGE</a>
+</div>
+</body>
+</html>
