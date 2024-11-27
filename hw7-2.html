@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cookies - username">
+    <link rel="stylesheet" href="hw4.css">
+
+    <script>
+        function createCookie() {
+          var cName = "userName7";
+          var nName = "name7";
+          var cValue = document.getElementById("user").value;
+          var nValue = document.getElementById("name").value;
+          document.cookie = cName + "=" + cValue + ";";
+         document.cookie = nName + "=" + nValue + ";";
+        }
+
+        function getCookie(cName) {
+          var name = cName + "=";
+          var ca = document.cookie.split(';');
+          for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+        }
+
+        function checkCookie() {
+          var user = getCookie("name7");
+          if (user != "") {
+            console.log(user);
+            document.getElementById("result").innerHTML = "Welcome back " + user;
+            document.getElementById("myform").style.display = "none";
+          } else {
+            document.getElementById("myform").style.display = "block";
+            }
+          }
+        </script>
+    <title>Working with Cookies</title>
+</head>
+<body onload="checkCookie();">
+<div class="table">
+
+<h2>Working with Cookies</h2>
+<p id="result"></p>
+<div id="myform">
+<form>
+<label for="name">Type your name: </label> <input type="text" name="name" id="name"><br><br><br>
+<label for="user">Type your username: </label> <input type="text" name="user" id="user"><br>
+<br><br>
+<br><br>
+<input type="button" value="Create Cookie" onclick="createCookie();"><br><br>
+<input type="reset" value="Clear Form">
+</form><br><br>
+<div>
+    <a class="button" href="hw7.html">HOME WORK 7</a>
+    <a class="button" href="index.html">HOME PAGE</a>
+    </div>
+</section>
+</div>
+<section>
+</body>
+
+
+</html>

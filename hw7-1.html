@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hw4.css">
+    <title>Homework 7 - Objects - Cookies</title>
+    <script>
+      function fontChange(){
+        const nodeList = document.querySelectorAll(".par");
+        var select = document.getElementById("mySelect");
+        var selectedValue = select.value;
+
+        for (let i = 0; i < nodeList.length; i++) {
+
+          nodeList[i].style.fontSize = selectedValue + "px";
+
+      }
+    }
+      function colorChange(color){
+        document.body.style.background = color;
+      }
+      function changeContent(variants){
+        const nodeList = document.querySelectorAll(".par");
+
+
+
+        if(variants === "italic"){
+          let chbxitalic = document.querySelector('#italic')
+            for (let i = 0; i < nodeList.length; i++) {
+              if(chbxitalic.checked){
+              nodeList[i].style.fontStyle = "italic";
+            }else{
+              nodeList[i].style.fontStyle = "normal";
+          }
+        }
+      }
+        if(variants === "bold"){
+          let chbxBold = document.querySelector('#bold')
+            for (let i = 0; i < nodeList.length; i++) {
+              if(chbxBold.checked){
+              nodeList[i].style.fontWeight = "bold";
+            }else{
+              nodeList[i].style.fontWeight = "normal";
+          }
+        }
+      }
+        if(variants === "underline"){
+          let chbxUnderline = document.querySelector('#underline')
+            for (let i = 0; i < nodeList.length; i++) {
+              if(chbxUnderline.checked){
+              nodeList[i].style.textDecoration = "underline";
+            }else{
+              nodeList[i].style.textDecoration = "none";
+          }
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="table">
+
+        <h1>Part 1</h1> <br>
+
+        <div class="main">
+          <h3 class="title">Objects - Cookies</h3> <br>
+            <label class="container"  >Underline
+                <input type="checkbox"  id="underline"  onchange="changeContent('underline')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="container" >Italic
+                <input type="checkbox" id="italic"  onchange="changeContent('italic')">
+                <span class="checkmark"></span>
+              </label>
+
+              <label class="container">Bold
+                <input type="checkbox" id="bold"  onchange="changeContent('bold')">
+                <span class="checkmark"></span>
+              </label>
+
+              <br> <br> <br>
+<h3 class="title">Choose Background Color</h3> <br>
+              <input type="radio" id="Red" name="Red" value="Red" onclick="colorChange('red')">
+            <label for="Red" >Red</label>
+            <input type="radio" id="Blue" name="Blue" value="Blue" onclick="colorChange('blue')">
+            <label for="Blue" >Blue</label>
+            <input type="radio" id="White" name="White" value="White"onclick="colorChange('white')">
+            <label for="White" >White</label>
+            <br> <br> <br>
+
+
+            <label for="fontSize" >Choose Font Size:</label>
+            <select id="mySelect" name="fontSize" onchange="fontChange()">
+              <option value="18">18px</option>
+              <option value="24">24px</option>
+              <option value="32">32px</option>
+            </select>
+        </div> <br> <br> <br>
+        <div  class="par">Lorem ipsum dolor sit amet consectetur, adipisicing elit. In molestiae saepe voluptatibus quam officiis similique sed cum repellat aut beatae unde adipisci quos, obcaecati aliquid a provident facere, et mollitia!</div>
+    <br>
+    <div  class="par">Lorem ipsum dolor sit amet consectetur, adipisicing elit. In molestiae saepe voluptatibus quam officiis similique sed cum repellat aut beatae unde adipisci quos, obcaecati aliquid a provident facere, et mollitia!</div>
+<br>
+<div  class="par">Lorem ipsum dolor sit amet consectetur, adipisicing elit. In molestiae saepe voluptatibus quam officiis similique sed cum repellat aut beatae unde adipisci quos, obcaecati aliquid a provident facere, et mollitia!</div>
+
+
+
+      </div>
+    </div> </div><br><br><br>  </div>
+    <div style="text-align: center;">
+    <a class="button" href="hw7.html">HOME WORK 7</a>
+    <a class="button" href="index.html">HOME PAGE</a>
+
+</div>
+</body>
+</html>
