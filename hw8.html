@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 <style>
+  .container{
+    display: flex;
+    align-items: center;
+    place-content: center;
+    flex-direction: column;
+  }
+  .content{
+   max-width: 600px;
+  }
 table,th,td {
   border : 1px solid black;
   border-collapse: collapse;
@@ -10,11 +19,17 @@ th,td {
 }
 </style>
 <body>
+  <div class="container">
+    <h1 class="title">Homework 8 - AJAX Application</h1><br><br>
+
+
 
 <button type="button" onclick="loadDoc()">Get CD collection</button>
 <br><br>
+
 <table id="demo"></table>
 
+</div>
 <script>
 function loadDoc() {
   const xhttp = new XMLHttpRequest();
@@ -28,7 +43,7 @@ function myFunction(xml) {
   const xmlDoc = xml.responseXML;
   const x = xmlDoc.getElementsByTagName("CD");
   let table="<tr><th>Artist</th><th>Title</th></tr>";
-  for (let i = 0; i <x.length; i++) { 
+  for (let i = 0; i <x.length; i++) {
     table += "<tr><td>" +
     x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
     "</td><td>" +
@@ -38,6 +53,41 @@ function myFunction(xml) {
   document.getElementById("demo").innerHTML = table;
 }
 </script>
+<div class="container">
+<h2>Explanation of AJAX</h2><br>
+<p class="content">
+  The user generates an event, such as by clicking 'Get CD Collection' button.<br>This will create a new XMLHttpRequest object and configured with a request parameter that includes the file name 'cd_catalog.xml'.
+   <br>This results in the XMLHttpRequest object making an asynchronous request to the web server.<br>
+
+   An object (listener) receives the request, processes it, and stores any data in the request to the data store.
+  The object that processed the request returns an XML document containing any updates that need to go to the client.
+  The XMLHttpRequest object receives the XML data, processes it, and updates the HTML DOM representing the page with the new data.</p>
+<br><br>
+<h2>REST API</h2>
+<h2>Alpha Vantage</h2><br>
+<h3 ><a href="https://www.alphavantage.co/documentation/" alt="Developer API Documentation for Alpha Vantage">Developer API Documentation</a></h3>
+<div class="content">
+<p>Alpha Vantage provides realtime and historical financial market data through a set of powerful and developer-friendly data APIs and spreadsheets. From traditional asset classes (e.g., stocks, ETFs, mutual funds) to economic indicators, from foreign exchange rates to commodities, from fundamental data to technical indicators, Alpha Vantage is your one-stop-shop for enterprise-grade global market data delivered through cloud-based APIs, Excel, and Google Sheets.</p>
+<br>
+
+<p>This API returns raw (as-traded) daily time series (date, daily open, daily high, daily low, daily close, daily volume) of the global equity specified, covering 20+ years of historical data. The OHLCV data is sometimes called "candles" in finance literature. If you are also interested in split/dividend-adjusted data, please use the Daily Adjusted API, which covers adjusted close values and historical split and dividend events.</p>
+<br>
+<p>API Parameters</p>
+<ul>
+  <li>Required: function - The time series of your choice. In this case, function=TIME_SERIES_DAILY_ADJUSTED</li>
+ <li>Required: symbol - The name of the equity of your choice. For example: symbol=IBM</li>
+ <li>Optional: outputsize -   By default, datatype=json. Strings json and csv are accepted with the following specifications: json returns the daily time series in JSON format; csv returns the time series as a CSV (comma separated value) file.
+</li>
+ <li>Required: apikey -   Free API Available.
+</li>
+ <li>Are there usage/frequency limits for the API service? - We are pleased to provide free stock API service covering the majority of our datasets for up to 25 requests per day. If you would like to target a larger API call volume, </li>
+
+
+</ul>
+
+</div>
+<button type="button"><a href="">HOME</a></button>
+</div>
 
 </body>
 </html>
